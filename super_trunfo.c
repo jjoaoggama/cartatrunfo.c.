@@ -3,7 +3,8 @@
 #define MAX_NOME 100
 #define MAX_CODIGO 5
 
-// Estrutura para armazenar os dados da carta
+// aqui é os dados da carta
+
 struct Carta {
     char estado;
     char codigo[MAX_CODIGO];
@@ -17,7 +18,7 @@ struct Carta {
     float superPoder;
 };
 
-// Função para calcular o Super Poder
+// Super Poder
 float calcularSuperPoder(struct Carta c) {
     return (float)c.populacao +
            c.area +
@@ -30,7 +31,7 @@ float calcularSuperPoder(struct Carta c) {
 int main() {
     struct Carta carta1, carta2;
 
-    // Entrada dos dados da primeira carta
+    //  dados da primeira carta
     printf("Digite os dados da Carta 1:\n");
 
     printf("Estado (A-H): ");
@@ -55,7 +56,7 @@ int main() {
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &carta1.pontosTuristicos);
 
-    // Entrada dos dados da segunda carta
+    //  dados da segunda carta
     printf("\nDigite os dados da Carta 2:\n");
 
     printf("Estado (A-H): ");
@@ -80,7 +81,7 @@ int main() {
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &carta2.pontosTuristicos);
 
-    // Cálculos
+    // calculos
     carta1.densidadePopulacional = carta1.populacao / carta1.area;
     carta1.pibPerCapita = (carta1.pib * 1e9f) / carta1.populacao;
     carta1.superPoder = calcularSuperPoder(carta1);
@@ -89,7 +90,7 @@ int main() {
     carta2.pibPerCapita = (carta2.pib * 1e9f) / carta2.populacao;
     carta2.superPoder = calcularSuperPoder(carta2);
 
-    // Comparações
+    // comparações
     int popVence = carta1.populacao > carta2.populacao;
     int areaVence = carta1.area > carta2.area;
     int pibVence = carta1.pib > carta2.pib;
@@ -98,7 +99,7 @@ int main() {
     int pibCapitaVence = carta1.pibPerCapita > carta2.pibPerCapita;
     int poderVence = carta1.superPoder > carta2.superPoder;
 
-    // Impressão das comparações
+    // resultad comparações
     printf("\n--- Comparação de Cartas ---\n");
 
     printf("População: Carta 1 venceu (%d)\n", popVence);
@@ -109,7 +110,7 @@ int main() {
     printf("PIB per Capita: Carta 1 venceu (%d)\n", pibCapitaVence);
     printf("Super Poder: Carta 1 venceu (%d)\n", poderVence);
 
-    // Impressão das cartas com detalhes
+    // resultado da cartas com detalhes
     printf("\n--- Detalhes das Cartas ---\n");
 
     for (int i = 1; i <= 2; i++) {
